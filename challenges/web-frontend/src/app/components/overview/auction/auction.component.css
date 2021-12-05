@@ -1,0 +1,31 @@
+.mat-card{
+  display: grid;
+  grid-template-rows: 10% 15% auto 10%;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+}
+.title-card {
+  font-size: 15px
+}
+
+.mat-card .-subtitle{
+   color:rgb(18, 30, 57);
+ }
+
+.img-auction{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+mat-card-footer {
+  margin: 0 0px 0px 0px;
+}
+
+.heighestBidder{
+  border:1px solid yellow
+}
+ul.ba {
+  list-style-type: none;
+}

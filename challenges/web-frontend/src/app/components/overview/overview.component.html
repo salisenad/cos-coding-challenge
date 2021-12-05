@@ -1,0 +1,32 @@
+<div>
+  <h2 class="title">Auctions</h2>
+  <mat-card *ngIf="highestBidderAuction.length; else bidderMessage">
+    <h2 class="title">Your Highest Bids</h2>
+    <ul class="auction-list item" >
+      <li *ngFor="let auction of highestBidderAuction">
+        <app-auction [auction]="auction"></app-auction>
+      </li>
+    </ul>
+  </mat-card>
+  <ng-template #bidderMessage>
+    <mat-card>
+      You aren't the highest bidder in any auction!
+    </mat-card>
+  </ng-template>
+  <mat-card  *ngIf="hotDealsListAuction.length">
+    <h2 class="title">Hot Bids</h2>
+    <ul class="auction-list item">
+      <li *ngFor="let auction of hotDealsListAuction">
+        <app-auction [auction]="auction"></app-auction>
+      </li>
+    </ul>
+  </mat-card>
+  <mat-card *ngIf="normalDealsListAuction.length">
+    <h2 class="title">Normal deals</h2>
+    <ul class="auction-list item">
+      <li *ngFor="let auction of normalDealsListAuction">
+        <app-auction [auction]="auction"></app-auction>
+      </li>
+    </ul>
+  </mat-card>
+</div>

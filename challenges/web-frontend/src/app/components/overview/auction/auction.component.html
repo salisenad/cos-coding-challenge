@@ -1,0 +1,21 @@
+<mat-card [ngClass]="auction.amIHighestBidder ? 'highestBidder': ''">
+  <mat-card-title  class="title-card">
+    {{auction.label}}
+  </mat-card-title>
+  <mat-card-subtitle style="font-size: 10px; margin-top: 15px;">
+        Auction Started at {{auction['startedAt'] | date:'hh:mm:ss'}} |
+        {{auction['associatedVehicle']['mileageInKm'] }} km |
+        {{auction['associatedVehicle']['fuelType'] | fuelType}} |
+        {{auction['associatedVehicle']['transmission'] | formatTransmision}} |
+        {{auction['associatedVehicle']['ez']}}
+  </mat-card-subtitle>
+  <mat-card-content>
+    <img
+      class="img-auction"
+      [src]="auction.associatedVehicle.vehicleImages[0].url"
+      alt="Picture of the car">
+  </mat-card-content>
+  <mat-card-footer>Remaining time:
+      {{auction.remainingTimeInSeconds | formatTime}}
+  </mat-card-footer>
+</mat-card>
